@@ -1,13 +1,29 @@
 ---
 ---
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0;" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+  rel="stylesheet"
+/>
+<link
+  rel="stylesheet"
+  href="{{ site.baseurl }}/assets/css/custom-variables.css"
+/>
 <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/bootstrap.min.css" />
 <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css" />
+
+<script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
+
 <script
   type="module"
   src="{{ site.baseurl }}/assets/js/bootstrap.bundle.min.js"
 ></script>
 <script type="module" src="{{ site.baseurl }}/assets/js/main.js"></script>
 
-{{ content }}
+<div class="container h-100 d-flex flex-column">
+  {% include header.html %} {{ content }} {% include footer.html %}
+</div>
 

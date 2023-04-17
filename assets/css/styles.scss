@@ -1,3 +1,36 @@
 ---
 ---
+body {
+  font-family: 'Roboto', 'sans-serif';
+}
 
+a {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+span {
+  display: inline-block;
+}
+
+object {
+  position: relative;
+  z-index: -1;
+}
+
+.font-large {
+  font-size: 28px;
+}
+
+.font-medium {
+  font-size: 20px;
+}
+
+.column-left {
+  padding-left: 0px !important;
+}
+
+.column-right {
+  padding-right: 0px !important;
+}

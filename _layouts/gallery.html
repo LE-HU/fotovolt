@@ -1,0 +1,88 @@
+---
+layout: base
+---
+
+<script src="https://unpkg.com/magic-grid/dist/magic-grid.min.js"></script>
+
+{{ content }}
+
+<div class="d-flex flex-column">
+  <div class="gallery" style="position: absolute"></div>
+</div>
+
+<script>
+  const images = [
+    "007f8d.jpg",
+    "0c69e9.jpg",
+    "0d4f02.jpg",
+    "11cedd.jpg",
+    "1ea161.jpg",
+    "1fe5a1.jpg",
+    "259052.jpg",
+    "2d18b1.jpg",
+    "2fca6c.jpg",
+    "31d707.jpg",
+    "39360f.jpg",
+    "395041.jpg",
+    "39a6f7.jpg",
+    "4260c7.jpg",
+    "47bc29.jpg",
+    "492f40.jpg",
+    "4a8ead.jpg",
+    "5c05e3.jpg",
+    "65557b.jpg",
+    "6b2684.jpg",
+    "6c6f45.jpg",
+    "6f81d5.jpg",
+    "77e399.jpg",
+    "7ae5a1.jpg",
+    "7c183e.jpg",
+    "7f01c7.jpg",
+    "80c8f2.jpg",
+    "91688d.jpg",
+    "974080.jpg",
+    "9a4b98.jpg",
+    "a5860f.jpg",
+    "ad084f.jpg",
+    "b70af4.jpg",
+    "b80f8a.jpg",
+    "b8c589.jpg",
+    "c0dd3f.jpg",
+    "ce0159.jpg",
+    "cf5165.jpg",
+    "e021ff.jpg",
+    "eeb2ee.jpg",
+    "ef6b46.jpg",
+    "efc90e.jpg",
+    "f90987.jpg",
+  ];
+
+  gallery = document.querySelector(".gallery");
+
+  images.forEach((path) => {
+    const image = document.createElement("img");
+    image.src = "{{ site.baseurl }}/assets/img/" + path;
+    image.setAttribute("class", "grid-item");
+    image.setAttribute("alt", "image");
+    gallery.appendChild(image);
+  });
+
+  let magicGrid = new MagicGrid({
+    container: ".gallery",
+    static: true,
+    items: 43,
+    gutter: 15,
+    maxColumns: 3,
+    useMin: true,
+    useTransform: false,
+    animate: true,
+    center: true,
+  });
+
+  magicGrid.listen();
+
+  setTimeout(() => {
+    magicGrid.positionItems();
+  }, 1000);
+</script>
+
